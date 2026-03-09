@@ -20,23 +20,14 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/">
-              <a className="flex items-center space-x-3 mb-5 inline-flex">
-                <div className="relative w-14 h-14 flex-shrink-0">
-                  <Image
-                    src="/Logo principal blanc.png"
-                    alt="Terrasses & Paysages"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-                <div>
-                  <div className="font-display font-bold text-base text-cream leading-tight">
-                    Terrasses & Paysages
-                  </div>
-                  <div className="text-xs font-body text-cream/50 tracking-widest uppercase">
-                    Valenciennes
-                  </div>
-                </div>
+              <a className="relative block w-44 h-20 mb-5">
+                <Image
+                  src="/Logo principal blanc.png"
+                  alt="Terrasses & Paysages"
+                  layout="fill"
+                  objectFit="contain"
+                  objectPosition="left center"
+                />
               </a>
             </Link>
             <p className="text-sm text-cream/70 font-body leading-relaxed mb-5">
@@ -114,7 +105,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-cream/40 font-body">
-            © {new Date().getFullYear()} Terrasses & Paysages — SIRET : 924 931 801 000 22
+            © {new Date().getFullYear()} Terrasses & Paysages. Tous droits réservés.
           </p>
           <p className="text-xs text-cream/30 font-body">
             Aménagement extérieur · Valenciennes

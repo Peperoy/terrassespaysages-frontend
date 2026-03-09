@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -115,6 +115,15 @@ const projects = [
 
 export default function RealisationsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const filterRef = useRef(null);
+
+  const handleCategoryChange = (id) => {
+    setSelectedCategory(id);
+    if (id !== selectedCategory && filterRef.current) {
+      const top = filterRef.current.getBoundingClientRect().top + window.scrollY - 76;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
   const filtered = selectedCategory === 'all'
     ? projects
@@ -141,6 +150,9 @@ export default function RealisationsPage() {
         </div>
       </section>
 
+      {/* Ancre de scroll — juste avant les filtres */}
+      <div ref={filterRef} />
+
       {/* Filtres */}
       <section className="py-6 bg-white/80 backdrop-blur-md border-b border-warm-200 sticky top-[76px] z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,7 +160,7 @@ export default function RealisationsPage() {
             {categories.map((cat) => (
               <motion.button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => handleCategoryChange(cat.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-5 py-2.5 rounded-full text-sm font-body font-medium transition-all duration-300 ${
@@ -182,8 +194,7 @@ export default function RealisationsPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.07, duration: 0.5 }}
-                  whileHover={{ y: -6 }}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                  className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image

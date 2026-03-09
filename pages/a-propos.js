@@ -73,14 +73,14 @@ export default function AProposPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="relative w-20 h-20 flex-shrink-0">
-                  <Image src="/Logo principal bleu.png" alt="Terrasses & Paysages" layout="fill" objectFit="contain" />
-                </div>
-                <div>
-                  <h2 className="text-3xl font-display font-bold text-primary">Terrasses & Paysages</h2>
-                  <p className="text-khaki font-body">Valenciennes — SIRET : 924 931 801 000 22</p>
-                </div>
+              <div className="relative w-56 h-24 mb-8">
+                <Image
+                  src="/Logo principal bleu.png"
+                  alt="Terrasses & Paysages"
+                  layout="fill"
+                  objectFit="contain"
+                  objectPosition="left center"
+                />
               </div>
               <div className="space-y-5 text-primary/80 font-body leading-relaxed text-lg">
                 <p>

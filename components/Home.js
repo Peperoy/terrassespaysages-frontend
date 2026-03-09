@@ -42,10 +42,10 @@ const values = [
 ];
 
 const stats = [
-  { value: '100+', label: 'Projets réalisés' },
   { value: '30 km', label: 'Zone d\'intervention' },
   { value: '100%', label: 'Sur mesure' },
   { value: '50%', label: 'Crédit d\'impôt*' },
+  { value: '48h', label: 'Réponse devis' },
 ];
 
 const realisations = [
