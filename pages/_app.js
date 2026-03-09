@@ -1,15 +1,10 @@
+import Layout from '../components/layout/Layout';
 import '../styles/globals.css';
-import Head from 'next/head';
 
-function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Next.js App</title>
-      </Head>
+    <Layout>
       <Component {...pageProps} />
-    </>
+    </Layout>
   );
 }
-
-export default App;

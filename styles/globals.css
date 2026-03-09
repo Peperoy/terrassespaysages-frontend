@@ -1,10 +1,136 @@
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/* styles/globals.css */
+/* Charte graphique — Terrasses & Paysages */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   IMPORTS DE POLICES
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   VARIABLES CSS — CHARTE TERRASSES & PAYSAGES
+   ============================================ */
+
+:root {
+  /* --- Couleurs principales --- */
+  --color-primary: #011336;
+  --color-primary-dark: #000d26;
+  --color-primary-light: #0a2a6e;
+
+  /* --- Couleur d'accent --- */
+  --color-coral: #FF784F;
+  --color-coral-dark: #e05c33;
+  --color-coral-light: #ff9b80;
+
+  /* --- Neutres de la charte --- */
+  --color-ash: #BFC0B3;
+  --color-khaki: #ABA39A;
+
+  /* --- Fonds --- */
+  --color-cream: #FDFCF3;
+  --color-warm-100: #F5F2E8;
+  --color-warm-200: #EDE8D8;
+  --color-warm-300: #DDD5C0;
+
+  /* --- Texte --- */
+  --color-text: #011336;
+  --color-text-secondary: #ABA39A;
+  --color-text-light: #BFC0B3;
+  --color-text-inverse: #FDFCF3;
+
+  /* --- États --- */
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+  --color-warning: #F59E0B;
+
+  /* --- Typographie --- */
+  --font-display: 'Playfair Display', serif;
+  --font-script: 'Dancing Script', cursive;
+  --font-body: 'Poppins', sans-serif;
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
 }
 
-* {
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+/* ============================================
+   UTILITAIRES CUSTOM
+   ============================================ */
+
+.font-display { font-family: var(--font-display); }
+.font-script { font-family: var(--font-script); }
+.font-body { font-family: var(--font-body); }
+
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
