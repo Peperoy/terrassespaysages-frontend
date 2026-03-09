@@ -39,24 +39,15 @@ export default function Header() {
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
           <Link href="/">
-            <a className="flex items-center space-x-3 group">
-              <div className="relative w-16 h-16 flex-shrink-0">
-                <Image
-                  src="/Logo principal bleu.png"
-                  alt="Terrasses & Paysages"
-                  layout="fill"
-                  objectFit="contain"
-                  priority
-                />
-              </div>
-              <div>
-                <div className="font-display font-bold text-lg text-primary leading-tight">
-                  Terrasses & Paysages
-                </div>
-                <div className="text-xs font-body text-khaki tracking-widest uppercase">
-                  Valenciennes
-                </div>
-              </div>
+            <a className="relative block w-48 h-14 flex-shrink-0 group">
+              <Image
+                src="/Logo principal bleu.png"
+                alt="Terrasses & Paysages"
+                layout="fill"
+                objectFit="contain"
+                objectPosition="left center"
+                priority
+              />
             </a>
           </Link>
 
