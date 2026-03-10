@@ -278,7 +278,7 @@ export default function Home() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-coral text-white p-5 rounded-2xl shadow-xl">
-                <div className="font-display font-bold text-2xl">+50%</div>
+                <div className="font-display font-bold text-2xl">50%</div>
                 <div className="text-xs font-body text-white/80">Crédit d&apos;impôt</div>
               </div>
             </motion.div>
