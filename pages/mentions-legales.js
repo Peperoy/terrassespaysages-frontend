@@ -84,9 +84,6 @@ export default function MentionsLegales() {
                 vercel.com
               </a>
             </p>
-            <p className="text-xs text-khaki italic">
-              Si le site est hébergé par un autre prestataire, remplacez ces informations en conséquence.
-            </p>
           </Section>
 
           <Section title="4. Propriété intellectuelle">
