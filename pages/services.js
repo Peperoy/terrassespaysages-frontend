@@ -75,7 +75,7 @@ const services = [
       'Plantation de plantes vivaces et graminées',
       'Aménagement de jardinières',
     ],
-    image: '/IMG_3826.jpg',
+    image: '/manon.png',
   },
   {
     id: 'gazon',
@@ -88,7 +88,7 @@ const services = [
       'Préparation de terrain pour gazon',
       'Pose de gazon en rouleau',
     ],
-    image: '/IMG_2291.jpg',
+    image: '/IMG_4072.jpg',
   },
   {
     id: 'entretien',
@@ -102,7 +102,7 @@ const services = [
       'Remise en état de jardin',
       'Contrats d\'entretien pour entreprises et copropriétés',
     ],
-    image: '/IMG_4072.jpg',
+    image: '/antho.png',
     badge: '50% crédit d\'impôt pour particuliers',
   },
   {
@@ -114,7 +114,7 @@ const services = [
       'Installation de jacuzzi extérieur',
       'Installation de bain nordique',
     ],
-    image: '/IMG_3150.jpg',
+    image: '/IMG_2813.jpg',
   },
 ];
 

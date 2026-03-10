@@ -49,9 +49,9 @@ const stats = [
 ];
 
 const realisations = [
-  { src: '/pergola.jpg', title: 'Pergola bois', label: 'Structures' },
-  { src: '/IMG_4691.jpg', title: 'Aménagement extérieur', label: 'Paysagisme' },
-  { src: '/cloture rigide.jpg', title: 'Clôture rigide', label: 'Clôtures' },
+  { src: '/webp/pergola.webp', title: 'Pergola bois', label: 'Structures' },
+  { src: '/webp/Structures extérieures 5.webp', title: 'Aménagement extérieur', label: 'Paysagisme' },
+  { src: '/webp/cloture rigide.webp', title: 'Clôture rigide', label: 'Clôtures' },
 ];
 
 const fadeUp = {
@@ -66,7 +66,7 @@ export default function Home() {
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/IMG_5194.jpg"
+            src="/webp/Maçonnerie paysagère.webp"
             alt="Aménagement extérieur Terrasses & Paysages"
             layout="fill"
             objectFit="cover"
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-0 right-0 w-72 opacity-10 pointer-events-none select-none">
-          <Image src="/Éléments graphiques/Liane blanche 1.png" alt="" width={300} height={400} />
+          <Image src="/Éléments graphiques/Liane blanche 1.png" alt="" width={300} height={95} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -271,7 +271,7 @@ export default function Home() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] relative">
                 <Image
-                  src="/IMG_5196.jpg"
+                  src="/webp/gazon-2.webp"
                   alt="Aménagement paysager professionnel"
                   layout="fill"
                   objectFit="cover"
