@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const navLinks = [
   { href: '/', label: 'Accueil' },
@@ -35,7 +35,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/maxime.lefebvre.144"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-coral w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -44,13 +44,22 @@ export default function Footer() {
                 <Facebook size={18} />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/terrasses_et_paysages/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-coral w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/maxime-lefebvre-terrasses-et-paysages-aa56b9100/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-coral w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={18} />
               </a>
             </div>
           </div>
@@ -105,11 +114,25 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-cream/40 font-body">
-            © {new Date().getFullYear()} Terrasses & Paysages. Tous droits réservés.
+            © {new Date().getFullYear()} Terrasses &amp; Paysages. Tous droits réservés.
           </p>
-          <p className="text-xs text-cream/30 font-body">
-            Aménagement extérieur · Valenciennes
-          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/mentions-legales">
+              <a className="text-xs text-cream/30 hover:text-cream/60 font-body transition-colors">
+                Mentions légales
+              </a>
+            </Link>
+            <Link href="/politique-de-confidentialite">
+              <a className="text-xs text-cream/30 hover:text-cream/60 font-body transition-colors">
+                Confidentialité
+              </a>
+            </Link>
+            <Link href="/gestion-cookies">
+              <a className="text-xs text-cream/30 hover:text-cream/60 font-body transition-colors">
+                Cookies
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import SplashScreen from '../components/SplashScreen';
+import CookieBanner from '../components/CookieBanner';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }) {
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </Layout>
       </div>
+      <CookieBanner />
     </>
   );
 }

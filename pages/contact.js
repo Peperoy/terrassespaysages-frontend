@@ -68,6 +68,7 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -77,13 +78,25 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setLoading(false);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setSubmitted(true);
       setFormData({ prenom: '', nom: '', email: '', telephone: '', sujet: '', message: '' });
-    }, 4000);
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setError("Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter par téléphone.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -185,6 +198,16 @@ export default function ContactPage() {
                   >
                     <p className="font-display font-semibold text-lg mb-1">Message envoyé avec succès !</p>
                     <p className="text-sm font-body">Nous vous répondrons dans les plus brefs délais.</p>
+                  </motion.div>
+                )}
+
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="mb-6 bg-red-50 border-2 border-red-200 text-red-800 px-6 py-4 rounded-2xl"
+                  >
+                    <p className="text-sm font-body">{error}</p>
                   </motion.div>
                 )}
 
