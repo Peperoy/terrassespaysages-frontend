@@ -30,7 +30,7 @@ const projects = [
     category: 'structures',
     location: 'Valenciennes',
     description: 'Conception et pose d\'une pergola bois sur mesure pour espace de vie extérieur',
-    image: '/webp/pergola 1.webp',
+    image: '/webp/pergola-1.webp',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const projects = [
     category: 'structures',
     location: 'Région Nord',
     description: 'Création d\'une terrasse couverte par pergola avec traitement UV',
-    image: '/webp/pergola 2.webp',
+    image: '/webp/pergola-2.webp',
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const projects = [
     category: 'structures',
     location: 'Valenciennes',
     description: 'Pergola au design épuré intégrée dans un jardin moderne',
-    image: '/webp/pergola 3.webp',
+    image: '/webp/pergola-3.webp',
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ const projects = [
     category: 'structures',
     location: 'Valenciennes',
     description: 'Création d\'un espace de détente ombragé avec pergola bois',
-    image: '/webp/pergola 4.webp',
+    image: '/webp/pergola-4.webp',
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ const projects = [
     category: 'structures',
     location: 'Région Nord',
     description: 'Pergola en bois massif avec finitions soignées et lasure de protection',
-    image: '/webp/pergola 5.webp',
+    image: '/webp/pergola-5.webp',
   },
   // Structures extérieures
   {
@@ -71,7 +71,7 @@ const projects = [
     category: 'terrasses',
     location: 'Valenciennes',
     description: 'Réalisation d\'une terrasse extérieure sur mesure avec finitions soignées',
-    image: '/webp/Structures extérieures.webp',
+    image: '/webp/structures-exterieures.webp',
   },
   {
     id: 8,
@@ -79,7 +79,7 @@ const projects = [
     category: 'terrasses',
     location: 'Valenciennes',
     description: 'Pose d\'une terrasse en bois traité avec dalles et bordures',
-    image: '/webp/Structures extérieures 1.webp',
+    image: '/webp/structures-exterieures-1.webp',
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ const projects = [
     category: 'terrasses',
     location: 'Région Nord',
     description: 'Création d\'une terrasse dallée avec finitions de qualité',
-    image: '/webp/Structures extérieures 2.webp',
+    image: '/webp/structures-exterieures-2.webp',
   },
   {
     id: 10,
@@ -95,7 +95,7 @@ const projects = [
     category: 'terrasses',
     location: 'Valenciennes',
     description: 'Aménagement d\'une terrasse de jardin conviviale et durable',
-    image: '/webp/Structures extérieures 3.webp',
+    image: '/webp/structures-exterieures-3.webp',
   },
   {
     id: 11,
@@ -103,7 +103,7 @@ const projects = [
     category: 'terrasses',
     location: 'Valenciennes',
     description: 'Terrasse sur mesure conçue pour s\'intégrer à l\'architecture de la maison',
-    image: '/webp/Structures extérieures 4.webp',
+    image: '/webp/structures-exterieures-4.webp',
   },
   {
     id: 12,
@@ -111,7 +111,7 @@ const projects = [
     category: 'terrasses',
     location: 'Région Nord',
     description: 'Création d\'un espace terrasse avec revêtement et aménagement paysager',
-    image: '/webp/Structures extérieures 5.webp',
+    image: '/webp/structures-exterieures-5.webp',
   },
   {
     id: 13,
@@ -119,7 +119,7 @@ const projects = [
     category: 'terrasses',
     location: 'Valenciennes',
     description: 'Réalisation d\'une terrasse pavée avec joints soignés et finitions premium',
-    image: '/webp/Structures extérieures 6.webp',
+    image: '/webp/structures-exterieures-6.webp',
   },
   {
     id: 14,
@@ -127,7 +127,7 @@ const projects = [
     category: 'terrasses',
     location: 'Région Nord',
     description: 'Terrasse aménagée avec revêtement composite et éclairage intégré',
-    image: '/webp/Structures extérieures 7.webp',
+    image: '/webp/structures-exterieures-7.webp',
   },
   // Clôtures
   {
@@ -136,7 +136,7 @@ const projects = [
     category: 'clotures',
     location: 'Valenciennes',
     description: 'Pose de clôtures rigides avec occultants pour une délimitation nette et esthétique',
-    image: '/webp/cloture rigide.webp',
+    image: '/webp/cloture-rigide.webp',
   },
   {
     id: 16,
@@ -144,7 +144,7 @@ const projects = [
     category: 'clotures',
     location: 'Valenciennes',
     description: 'Installation d\'une clôture rigide avec portail assorti pour sécuriser le terrain',
-    image: '/webp/cloture rigide 1.webp',
+    image: '/webp/cloture-rigide-1.webp',
   },
   {
     id: 17,
@@ -152,7 +152,7 @@ const projects = [
     category: 'clotures',
     location: 'Région Nord',
     description: 'Clôture rigide gris anthracite sur muret pour une délimitation durable',
-    image: '/webp/cloture rigide 2.webp',
+    image: '/webp/cloture-rigide-2.webp',
   },
   // Jardins
   {
@@ -169,7 +169,7 @@ const projects = [
     category: 'jardins',
     location: 'Valenciennes',
     description: 'Sélection et plantation de végétaux adaptés au sol et à l\'exposition',
-    image: '/webp/Plantation.webp',
+    image: '/webp/plantation.webp',
   },
   {
     id: 20,
@@ -193,7 +193,7 @@ const projects = [
     category: 'jardins',
     location: 'Valenciennes',
     description: 'Aménagement d\'un coin bien-être extérieur avec végétaux et revêtement soigné',
-    image: '/webp/bien-être.webp',
+    image: '/webp/bien-etre.webp',
   },
   {
     id: 23,
@@ -201,7 +201,7 @@ const projects = [
     category: 'jardins',
     location: 'Valenciennes',
     description: 'Création d\'un espace de détente extérieur alliant verdure et confort',
-    image: '/webp/bien-être-2.webp',
+    image: '/webp/bien-etre-2.webp',
   },
   // Maçonnerie
   {
@@ -210,7 +210,7 @@ const projects = [
     category: 'amenagements',
     location: 'Région Nord',
     description: 'Travaux de maçonnerie paysagère — murets, allées et bordures en pierre',
-    image: '/webp/Maçonnerie paysagère.webp',
+    image: '/webp/maconnerie-paysagere.webp',
   },
   {
     id: 25,
@@ -218,7 +218,7 @@ const projects = [
     category: 'amenagements',
     location: 'Valenciennes',
     description: 'Réalisation d\'allées pavées et murets de soutènement en maçonnerie',
-    image: '/webp/Maçonnerie paysagère 2.webp',
+    image: '/webp/maconnerie-paysagere-2.webp',
   },
 ];
 

@@ -50,8 +50,8 @@ const stats = [
 
 const realisations = [
   { src: '/webp/pergola.webp', title: 'Pergola bois', label: 'Structures' },
-  { src: '/webp/Structures extérieures 5.webp', title: 'Aménagement extérieur', label: 'Paysagisme' },
-  { src: '/webp/cloture rigide.webp', title: 'Clôture rigide', label: 'Clôtures' },
+  { src: '/webp/structures-exterieures-5.webp', title: 'Aménagement extérieur', label: 'Paysagisme' },
+  { src: '/webp/cloture-rigide.webp', title: 'Clôture rigide', label: 'Clôtures' },
 ];
 
 const fadeUp = {
@@ -66,7 +66,7 @@ export default function Home() {
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/webp/Maçonnerie paysagère.webp"
+            src="/webp/maconnerie-paysagere.webp"
             alt="Aménagement extérieur Terrasses & Paysages"
             layout="fill"
             objectFit="cover"
