@@ -29,7 +29,6 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [],
-    unoptimized: true,
   },
   async headers() {
     return [
