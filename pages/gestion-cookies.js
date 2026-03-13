@@ -83,7 +83,7 @@ export default function GestionCookies() {
 
           <Section title="2. Cookies utilisés sur ce site">
             <p>
-              Le site <strong className="text-primary">terrasses-paysages.fr</strong> n&apos;utilise
+              Le site <strong className="text-primary">terrasses-paysages.com</strong> n&apos;utilise
               <strong className="text-primary"> aucun cookie publicitaire ou de traçage</strong>.
               Seuls des cookies <strong className="text-primary">strictement nécessaires</strong> au fonctionnement
               du site sont déposés, sans nécessiter votre consentement préalable (article 82 de la loi Informatique et Libertés).

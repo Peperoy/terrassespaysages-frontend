@@ -241,8 +241,25 @@ export default function RealisationsPage() {
   return (
     <>
       <Head>
-        <title>Réalisations — Terrasses & Paysages Valenciennes</title>
-        <meta name="description" content="Galerie de réalisations Terrasses & Paysages : terrasses, jardins, clôtures, aménagements extérieurs à Valenciennes." />
+        <title>Réalisations paysagiste Valenciennes — Jardins, Terrasses & Clôtures | Terrasses & Paysages</title>
+        <meta name="description" content="Galerie de réalisations de votre paysagiste à Valenciennes : jardins aménagés, terrasses bois & carrelage, clôtures, pergolas et maçonnerie paysagère." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://terrasses-paysages.com/realisations" />
+
+        <meta property="og:title" content="Réalisations paysagiste Valenciennes — Jardins, Terrasses & Clôtures" />
+        <meta property="og:description" content="Galerie de réalisations : jardins, terrasses, clôtures et aménagements extérieurs à Valenciennes." />
+        <meta property="og:url" content="https://terrasses-paysages.com/realisations" />
+        <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:site_name" content="Terrasses & Paysages" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Réalisations — Terrasses & Paysages Valenciennes" />
+        <meta name="twitter:description" content="Galerie de réalisations : terrasses, jardins, clôtures et aménagements extérieurs à Valenciennes." />
+        <meta name="twitter:image" content="https://terrasses-paysages.com/og/home.jpg" />
       </Head>
 
       {/* Hero */}

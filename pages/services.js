@@ -131,6 +131,23 @@ export default function ServicesPage() {
       <Head>
         <title>Services — Terrasses & Paysages Valenciennes</title>
         <meta name="description" content="Création de jardins, terrasses, clôtures, maçonnerie paysagère, plantation et entretien à Valenciennes. Devis gratuit." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://terrasses-paysages.com/services" />
+
+        <meta property="og:title" content="Services — Terrasses & Paysages Valenciennes" />
+        <meta property="og:description" content="Création de jardins, terrasses, clôtures, maçonnerie paysagère, plantation et entretien à Valenciennes. Devis gratuit." />
+        <meta property="og:url" content="https://terrasses-paysages.com/services" />
+        <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:site_name" content="Terrasses & Paysages" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Services — Terrasses & Paysages Valenciennes" />
+        <meta name="twitter:description" content="Création de jardins, terrasses, clôtures et entretien paysager à Valenciennes. Devis gratuit." />
+        <meta name="twitter:image" content="https://terrasses-paysages.com/og/home.jpg" />
       </Head>
 
       {/* Hero */}

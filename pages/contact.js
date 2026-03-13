@@ -104,6 +104,38 @@ export default function ContactPage() {
       <Head>
         <title>Contact — Terrasses & Paysages Valenciennes</title>
         <meta name="description" content="Contactez Terrasses & Paysages à Valenciennes. Devis gratuit pour aménagement extérieur, terrasse, jardin, clôture. Tél : 07 83 27 69 67" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://terrasses-paysages.com/contact" />
+
+        <meta property="og:title" content="Contact — Terrasses & Paysages Valenciennes" />
+        <meta property="og:description" content="Contactez-nous pour un devis gratuit. Aménagement extérieur, terrasse, jardin, clôture à Valenciennes. Tél : 07 83 27 69 67" />
+        <meta property="og:url" content="https://terrasses-paysages.com/contact" />
+        <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:site_name" content="Terrasses & Paysages" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact — Terrasses & Paysages Valenciennes" />
+        <meta name="twitter:description" content="Contactez-nous pour un devis gratuit. Tél : 07 83 27 69 67" />
+        <meta name="twitter:image" content="https://terrasses-paysages.com/og/home.jpg" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqItems.map((q) => ({
+                '@type': 'Question',
+                name: q.question,
+                acceptedAnswer: { '@type': 'Answer', text: q.answer },
+              })),
+            }),
+          }}
+        />
       </Head>
 
       {/* Hero */}

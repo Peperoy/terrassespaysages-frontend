@@ -39,8 +39,8 @@ export default function SplashScreen({ onComplete }) {
       <div
         style={{
           position: 'absolute',
-          width: '420px',
-          height: '420px',
+          width: '560px',
+          height: '560px',
           borderRadius: '50%',
           background: 'radial-gradient(circle, #EDE8D8 0%, transparent 70%)',
           opacity: 0.8,
@@ -63,11 +63,11 @@ export default function SplashScreen({ onComplete }) {
         {/* Logo */}
         <div style={{
           position: 'relative',
-          width: 'min(340px, 60vw)',
-          height: 'min(340px, 60vw)',
+          width: 'min(480px, 85vw)',
+          height: 'min(480px, 85vw)',
         }}>
           <Image
-            src="/Logo principal bleu.png"
+            src="/Logo secondaire bleu.png"
             alt="Terrasses & Paysages"
             layout="fill"
             objectFit="contain"
