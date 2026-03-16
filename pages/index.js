@@ -45,7 +45,12 @@ const localBusinessSchema = {
     geoRadius: '30000',
   },
   priceRange: '€€',
-  sameAs: [],
+  sameAs: [
+     'https://www.google.com/maps/place/Terrasses+%26+Paysages/@50.3767065,3.4030893,10z/data=!3m1!4b1!4m6!3m5!1s0xad964cec52fb3e09:0x4d51d63bca804300!8m2!3d50.3771723!4d3.7327254!16s%2Fg%2F11wqrg7hmx?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D',
+     'https://www.facebook.com/maxime.lefebvre.144',
+     'https://www.instagram.com/terrasses_et_paysages/',
+     'https://www.linkedin.com/in/maxime-lefebvre-terrasses-et-paysages-aa56b9100/',
+  ],
 };
 
 export default function Index() {
@@ -56,8 +61,6 @@ export default function Index() {
         <meta name="description" content="Terrasses & Paysages : création de jardins, terrasses, clôtures, maçonnerie paysagère et entretien à Valenciennes et alentours. Devis gratuit — 07 83 27 69 67" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={SITE_URL} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
 
         <meta property="og:title" content="Terrasses & Paysages — Aménagement extérieur à Valenciennes" />
         <meta property="og:description" content="Création de jardins, terrasses, clôtures et entretien paysager à Valenciennes. Devis gratuit — 07 83 27 69 67" />

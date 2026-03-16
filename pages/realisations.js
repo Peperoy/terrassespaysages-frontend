@@ -241,12 +241,12 @@ export default function RealisationsPage() {
   return (
     <>
       <Head>
-        <title>Réalisations paysagiste Valenciennes — Jardins, Terrasses & Clôtures | Terrasses & Paysages</title>
+        <title>Réalisations — Paysagiste à Valenciennes | Terrasses & Paysages</title>
         <meta name="description" content="Galerie de réalisations de votre paysagiste à Valenciennes : jardins aménagés, terrasses bois & carrelage, clôtures, pergolas et maçonnerie paysagère." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://terrasses-paysages.com/realisations" />
 
-        <meta property="og:title" content="Réalisations paysagiste Valenciennes — Jardins, Terrasses & Clôtures" />
+        <meta property="og:title" content="Réalisations — Paysagiste à Valenciennes | Terrasses & Paysages" />
         <meta property="og:description" content="Galerie de réalisations : jardins, terrasses, clôtures et aménagements extérieurs à Valenciennes." />
         <meta property="og:url" content="https://terrasses-paysages.com/realisations" />
         <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
