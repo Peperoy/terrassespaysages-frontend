@@ -49,6 +49,7 @@ export default function Footer() {
                   layout="fill"
                   objectFit="contain"
                   objectPosition="left center"
+                  sizes="176px"
                 />
               </a>
             </Link>
@@ -135,22 +136,22 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-cream/40 font-body">
+          <p className="text-sm text-cream/60 font-body">
             © {new Date().getFullYear()} Terrasses &amp; Paysages. Tous droits réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/mentions-legales">
-              <a href="/mentions-legales" className="text-xs text-cream/30 hover:text-cream/60 font-body transition-colors">
+              <a href="/mentions-legales" className="text-xs text-cream/50 hover:text-cream/80 font-body transition-colors">
                 Mentions légales
               </a>
             </Link>
             <Link href="/politique-de-confidentialite">
-              <a href="/politique-de-confidentialite" className="text-xs text-cream/30 hover:text-cream/60 font-body transition-colors">
+              <a href="/politique-de-confidentialite" className="text-xs text-cream/50 hover:text-cream/80 font-body transition-colors">
                 Confidentialité
               </a>
             </Link>
             <Link href="/gestion-cookies">
-              <a href="/gestion-cookies" className="text-xs text-cream/30 hover:text-cream/60 font-body transition-colors">
+              <a href="/gestion-cookies" className="text-xs text-cream/50 hover:text-cream/80 font-body transition-colors">
                 Cookies
               </a>
             </Link>

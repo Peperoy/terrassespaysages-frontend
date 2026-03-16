@@ -70,6 +70,7 @@ export default function Home() {
             alt="Aménagement extérieur Terrasses & Paysages"
             layout="fill"
             objectFit="cover"
+            sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/30" />
@@ -150,7 +151,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <p className="text-xs text-cream/30 font-body text-center mt-4">
+          <p className="text-xs text-cream/50 font-body text-center mt-4">
             * Crédit d&apos;impôt sur les travaux d&apos;entretien pour particuliers dans le cadre des services à la personne
           </p>
         </div>

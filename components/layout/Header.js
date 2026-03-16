@@ -46,6 +46,7 @@ export default function Header() {
                 layout="fill"
                 objectFit="contain"
                 objectPosition="left center"
+                sizes="192px"
                 priority
               />
             </a>

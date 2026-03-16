@@ -72,6 +72,7 @@ export default function SplashScreen({ onComplete }) {
             alt="Terrasses & Paysages"
             layout="fill"
             objectFit="contain"
+            sizes="(max-width: 565px) 85vw, 480px"
             priority
           />
         </div>
