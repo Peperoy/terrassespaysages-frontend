@@ -21,7 +21,7 @@ module.exports = {
   priority: 0.7,
   transform: async (config, path) => {
     const priorities = {
-      '/': 1.0,
+      '/': 1,
       '/services': 0.9,
       '/realisations': 0.8,
       '/contact': 0.8,

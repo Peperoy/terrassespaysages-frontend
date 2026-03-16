@@ -1,23 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import LegalSection from '../components/LegalSection';
 
-const Section = ({ title, children }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 16 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-    className="mb-10"
-  >
-    <h2 className="text-xl font-display font-bold text-primary mb-4 pb-2 border-b-2 border-warm-200">
-      {title}
-    </h2>
-    <div className="text-sm text-primary/70 font-body space-y-3 leading-relaxed">
-      {children}
-    </div>
-  </motion.div>
-);
+const Section = LegalSection;
 
 export default function PolitiqueConfidentialite() {
   return (
@@ -207,7 +193,7 @@ export default function PolitiqueConfidentialite() {
               Ce site utilise des cookies techniques strictement nécessaires à son fonctionnement.
               Pour plus d&apos;informations, consultez notre{' '}
               <Link href="/gestion-cookies">
-                <a className="text-coral hover:underline">politique de gestion des cookies</a>
+                <a href="/gestion-cookies" className="text-coral hover:underline">politique de gestion des cookies</a>
               </Link>.
             </p>
           </Section>
@@ -222,13 +208,13 @@ export default function PolitiqueConfidentialite() {
 
           <div className="mt-10 pt-8 border-t border-warm-200 flex flex-col sm:flex-row gap-4 text-sm font-body">
             <Link href="/mentions-legales">
-              <a className="text-coral hover:underline">→ Mentions légales</a>
+              <a href="/mentions-legales" className="text-coral hover:underline">→ Mentions légales</a>
             </Link>
             <Link href="/gestion-cookies">
-              <a className="text-coral hover:underline">→ Gestion des cookies</a>
+              <a href="/gestion-cookies" className="text-coral hover:underline">→ Gestion des cookies</a>
             </Link>
             <Link href="/">
-              <a className="text-khaki hover:text-primary transition-colors ml-auto">← Retour à l&apos;accueil</a>
+              <a href="/" className="text-khaki hover:text-primary transition-colors ml-auto">← Retour à l&apos;accueil</a>
             </Link>
           </div>
 

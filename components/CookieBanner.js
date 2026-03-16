@@ -67,7 +67,7 @@ export default function CookieBanner() {
               En cliquant sur &laquo; Accepter &raquo;, vous consentez à leur utilisation.
               Vous pouvez à tout moment modifier votre choix via notre{' '}
               <Link href="/gestion-cookies">
-                <a className="text-coral hover:underline" onClick={refuse}>page de gestion des cookies</a>
+                <a href="/gestion-cookies" className="text-coral hover:underline" onClick={refuse}>page de gestion des cookies</a>
               </Link>.
             </p>
 

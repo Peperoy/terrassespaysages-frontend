@@ -1,24 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle, Cookie } from 'lucide-react';
+import { XCircle, Cookie } from 'lucide-react';
+import LegalSection from '../components/LegalSection';
 
-const Section = ({ title, children }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 16 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-    className="mb-10"
-  >
-    <h2 className="text-xl font-display font-bold text-primary mb-4 pb-2 border-b-2 border-warm-200">
-      {title}
-    </h2>
-    <div className="text-sm text-primary/70 font-body space-y-3 leading-relaxed">
-      {children}
-    </div>
-  </motion.div>
-);
+const Section = LegalSection;
 
 const cookiesList = [
   {
@@ -39,9 +25,9 @@ const cookiesList = [
 
 export default function GestionCookies() {
   const handleReset = () => {
-    if (typeof window !== 'undefined') {
+    if (globalThis.window !== undefined) {
       localStorage.removeItem('cookie_consent');
-      window.location.reload();
+      globalThis.window.location.reload();
     }
   };
 
@@ -84,7 +70,7 @@ export default function GestionCookies() {
           <Section title="2. Cookies utilisés sur ce site">
             <p>
               Le site <strong className="text-primary">terrasses-paysages.com</strong> n&apos;utilise
-              <strong className="text-primary"> aucun cookie publicitaire ou de traçage</strong>.
+              {' '}<strong className="text-primary">aucun cookie publicitaire ou de traçage</strong>.
               Seuls des cookies <strong className="text-primary">strictement nécessaires</strong> au fonctionnement
               du site sont déposés, sans nécessiter votre consentement préalable (article 82 de la loi Informatique et Libertés).
             </p>
@@ -100,8 +86,8 @@ export default function GestionCookies() {
                   </tr>
                 </thead>
                 <tbody>
-                  {cookiesList.map((cookie, i) => (
-                    <tr key={i} className="border-t border-warm-200">
+                  {cookiesList.map((cookie) => (
+                    <tr key={cookie.name} className="border-t border-warm-200">
                       <td className="p-3 font-mono font-medium text-primary">{cookie.name}</td>
                       <td className="p-3">
                         <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded-full text-xs font-medium">
@@ -127,8 +113,8 @@ export default function GestionCookies() {
                 'Réseaux sociaux (boutons de partage)',
                 'Outils de chat en direct',
                 'Services de cartographie embarquée',
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs">
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-xs">
                   <XCircle size={15} className="text-red-400 flex-shrink-0" />
                   <span className="text-primary/60">{item}</span>
                 </div>
@@ -222,13 +208,13 @@ export default function GestionCookies() {
 
           <div className="mt-10 pt-8 border-t border-warm-200 flex flex-col sm:flex-row gap-4 text-sm font-body">
             <Link href="/mentions-legales">
-              <a className="text-coral hover:underline">→ Mentions légales</a>
+              <a href="/mentions-legales" className="text-coral hover:underline">→ Mentions légales</a>
             </Link>
             <Link href="/politique-de-confidentialite">
-              <a className="text-coral hover:underline">→ Politique de confidentialité</a>
+              <a href="/politique-de-confidentialite" className="text-coral hover:underline">→ Politique de confidentialité</a>
             </Link>
             <Link href="/">
-              <a className="text-khaki hover:text-primary transition-colors ml-auto">← Retour à l&apos;accueil</a>
+              <a href="/" className="text-khaki hover:text-primary transition-colors ml-auto">← Retour à l&apos;accueil</a>
             </Link>
           </div>
 

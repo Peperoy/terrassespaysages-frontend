@@ -371,7 +371,7 @@ export default function RealisationsPage() {
               Parlons de votre projet et transformons vos idées en réalité.
             </p>
             <Link href="/contact">
-              <a className="inline-flex items-center justify-center bg-primary text-cream px-12 py-5 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 font-body font-medium text-lg">
+              <a href="/contact" className="inline-flex items-center justify-center bg-primary text-cream px-12 py-5 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 font-body font-medium text-lg">
                 Démarrer mon projet
                 <ArrowRight className="ml-2" size={20} />
               </a>

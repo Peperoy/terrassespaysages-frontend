@@ -147,7 +147,7 @@ export default function AProposPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <motion.div
-                key={index}
+                key={value.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -199,7 +199,7 @@ export default function AProposPage() {
               <ul className="space-y-4">
                 {commitments.map((commitment, index) => (
                   <motion.li
-                    key={index}
+                    key={commitment}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -236,7 +236,7 @@ export default function AProposPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {cities.map((city, index) => (
               <motion.div
-                key={index}
+                key={city}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -270,7 +270,7 @@ export default function AProposPage() {
               Contactez-nous pour discuter de votre projet d&apos;aménagement paysager.
             </p>
             <Link href="/contact">
-              <a className="inline-flex items-center justify-center bg-coral text-white px-12 py-5 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 font-body font-medium text-lg">
+              <a href="/contact" className="inline-flex items-center justify-center bg-coral text-white px-12 py-5 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 font-body font-medium text-lg">
                 Nous contacter
                 <ArrowRight className="ml-2" size={20} />
               </a>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
@@ -99,3 +100,11 @@ export default function SplashScreen({ onComplete }) {
     </div>
   );
 }
+
+SplashScreen.propTypes = {
+  onComplete: PropTypes.func,
+};
+
+SplashScreen.defaultProps = {
+  onComplete: null,
+};

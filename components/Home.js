@@ -107,13 +107,13 @@ export default function Home() {
 
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <a className="group inline-flex items-center justify-center bg-coral text-white px-8 py-4 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 font-body font-medium">
+                <a href="/contact" className="group inline-flex items-center justify-center bg-coral text-white px-8 py-4 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 font-body font-medium">
                   Demander un devis gratuit
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </a>
               </Link>
               <Link href="/realisations">
-                <a className="group inline-flex items-center justify-center border-2 border-cream/60 text-cream px-8 py-4 rounded-full hover:border-cream hover:bg-cream/10 transition-all duration-300 font-body font-medium">
+                <a href="/realisations" className="group inline-flex items-center justify-center border-2 border-cream/60 text-cream px-8 py-4 rounded-full hover:border-cream hover:bg-cream/10 transition-all duration-300 font-body font-medium">
                   Voir nos réalisations
                 </a>
               </Link>
@@ -138,7 +138,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
-                key={i}
+                key={stat.value}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -181,7 +181,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <motion.div
-                key={index}
+                key={service.href}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -196,7 +196,7 @@ export default function Home() {
                 <h3 className="text-lg font-display font-semibold text-primary mb-3">{service.title}</h3>
                 <p className="text-sm text-khaki font-body leading-relaxed mb-4">{service.description}</p>
                 <Link href={service.href}>
-                  <a className="inline-flex items-center text-sm text-coral font-body font-medium hover:gap-2 transition-all">
+                  <a href={service.href} className="inline-flex items-center text-sm text-coral font-body font-medium hover:gap-2 transition-all">
                     En savoir plus <ArrowRight size={15} className="ml-1" />
                   </a>
                 </Link>
@@ -206,7 +206,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/services">
-              <a className="inline-flex items-center justify-center bg-primary text-cream px-10 py-4 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-body font-medium">
+              <a href="/services" className="inline-flex items-center justify-center bg-primary text-cream px-10 py-4 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-body font-medium">
                 Découvrir tous nos services
               </a>
             </Link>
@@ -240,7 +240,7 @@ export default function Home() {
               <ul className="space-y-4">
                 {values.map((value, index) => (
                   <motion.li
-                    key={index}
+                    key={value}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -254,7 +254,7 @@ export default function Home() {
               </ul>
               <div className="mt-10">
                 <Link href="/a-propos">
-                  <a className="inline-flex items-center text-primary font-body font-medium hover:text-coral transition-colors group">
+                  <a href="/a-propos" className="inline-flex items-center text-primary font-body font-medium hover:text-coral transition-colors group">
                     En savoir plus sur nous
                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                   </a>
@@ -309,7 +309,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {realisations.map((real, index) => (
               <motion.div
-                key={index}
+                key={real.src}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -338,7 +338,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/realisations">
-              <a className="inline-flex items-center justify-center border-2 border-primary text-primary px-10 py-4 rounded-full hover:bg-primary hover:text-cream transition-all duration-300 font-body font-medium">
+              <a href="/realisations" className="inline-flex items-center justify-center border-2 border-primary text-primary px-10 py-4 rounded-full hover:bg-primary hover:text-cream transition-all duration-300 font-body font-medium">
                 Voir toutes nos réalisations
               </a>
             </Link>
@@ -367,7 +367,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <a className="inline-flex items-center justify-center bg-coral text-white px-12 py-5 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 font-body font-medium text-lg">
+                <a href="/contact" className="inline-flex items-center justify-center bg-coral text-white px-12 py-5 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 font-body font-medium text-lg">
                   Demander un devis gratuit
                   <ArrowRight className="ml-2" size={20} />
                 </a>

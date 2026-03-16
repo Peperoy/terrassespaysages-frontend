@@ -39,7 +39,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
           <Link href="/">
-            <a className="relative block w-48 h-14 flex-shrink-0 group">
+            <a href="/" className="relative block w-48 h-14 flex-shrink-0 group">
               <Image
                 src="/Logo principal bleu.png"
                 alt="Terrasses & Paysages"
@@ -55,7 +55,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
-                <a className={`relative px-4 py-2 text-sm font-body font-medium transition-colors rounded-full ${
+                <a href={item.path} className={`relative px-4 py-2 text-sm font-body font-medium transition-colors rounded-full ${
                   router.pathname === item.path
                     ? 'text-primary bg-warm-100'
                     : 'text-primary/60 hover:text-primary hover:bg-warm-100/60'
@@ -91,6 +91,7 @@ export default function Header() {
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
                 <a
+                  href={item.path}
                   className={`flex py-3 px-4 rounded-xl font-body font-medium transition-all ${
                     router.pathname === item.path
                       ? 'bg-primary text-cream shadow-md'

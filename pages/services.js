@@ -195,15 +195,15 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
                   <ul className="space-y-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-3">
                         <CheckCircle2 size={18} className="text-coral flex-shrink-0" />
                         <span className="text-primary/80 font-body">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Link href="/contact">
-                    <a className="inline-flex items-center gap-2 mt-8 bg-primary text-cream px-8 py-3.5 rounded-full hover:bg-primary-dark transition-all font-body font-medium hover:scale-105 shadow-lg">
+                    <a href="/contact" className="inline-flex items-center gap-2 mt-8 bg-primary text-cream px-8 py-3.5 rounded-full hover:bg-primary-dark transition-all font-body font-medium hover:scale-105 shadow-lg">
                       Demander un devis <ArrowRight size={18} />
                     </a>
                   </Link>
@@ -238,7 +238,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, index) => (
               <motion.div
-                key={index}
+                key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -275,7 +275,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <a className="inline-flex items-center justify-center bg-coral text-white px-12 py-4 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-2xl hover:scale-105 font-body font-medium text-lg">
+                <a href="/contact" className="inline-flex items-center justify-center bg-coral text-white px-12 py-4 rounded-full hover:bg-coral-dark transition-all duration-300 shadow-2xl hover:scale-105 font-body font-medium text-lg">
                   Demander un devis gratuit
                 </a>
               </Link>

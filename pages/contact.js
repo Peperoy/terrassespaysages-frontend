@@ -87,7 +87,7 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error('Contact form submission failed');
 
       setSubmitted(true);
       setFormData({ prenom: '', nom: '', email: '', telephone: '', sujet: '', message: '' });
@@ -162,7 +162,7 @@ export default function ContactPage() {
               <div className="space-y-5">
                 {contactInfo.map((info, index) => (
                   <motion.div
-                    key={index}
+                    key={info.title}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -179,8 +179,8 @@ export default function ContactPage() {
                           {info.lines[0]}
                         </a>
                       ) : (
-                        info.lines.map((line, idx) => (
-                          <p key={idx} className="text-khaki font-body text-sm">{line}</p>
+                        info.lines.map((line) => (
+                          <p key={line} className="text-khaki font-body text-sm">{line}</p>
                         ))
                       )}
                     </div>
@@ -201,8 +201,8 @@ export default function ContactPage() {
                   Tous nos devis sont gratuits et sans engagement. Nous vous répondons sous 48h.
                 </p>
                 <ul className="space-y-2.5">
-                  {['Visite sur site gratuite', 'Étude personnalisée', 'Conseils d\'experts'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-primary font-body">
+                  {['Visite sur site gratuite', 'Étude personnalisée', 'Conseils d\'experts'].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-primary font-body">
                       <CheckCircle size={16} className="text-coral flex-shrink-0" />
                       {item}
                     </li>
@@ -375,7 +375,7 @@ export default function ContactPage() {
           <div className="space-y-5">
             {faqItems.map((item, index) => (
               <motion.div
-                key={index}
+                key={item.question}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
