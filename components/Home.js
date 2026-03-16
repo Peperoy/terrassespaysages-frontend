@@ -77,7 +77,7 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-0 right-0 w-72 opacity-10 pointer-events-none select-none">
-          <Image src="/Éléments graphiques/Liane blanche 1.png" alt="" width={300} height={95} />
+          <Image src="/Éléments graphiques/Liane blanche 1.png" alt="Élément végétal décoratif" width={300} height={95} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -102,8 +102,8 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-cream/80 text-lg md:text-xl font-body font-light leading-relaxed mb-8">
-              J&apos;accompagne particuliers et professionnels dans la création et l&apos;entretien
-              d&apos;espaces extérieurs durables et fonctionnels.
+              Votre espace extérieur mérite d&apos;être unique. Ensemble, nous concevons et réalisons
+              votre aménagement paysager sur mesure — jardin, terrasse ou clôture — à Valenciennes et alentours.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
@@ -218,7 +218,7 @@ export default function Home() {
       {/* Pourquoi nous choisir */}
       <section className="py-24 bg-warm-100 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 opacity-5 pointer-events-none select-none w-64">
-          <Image src="/Éléments graphiques/Liane bleu 2.png" alt="" width={256} height={350} />
+          <Image src="/Éléments graphiques/Liane bleu 2.png" alt="Élément végétal décoratif" width={256} height={350} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
