@@ -14,7 +14,6 @@ const services = [
     title: 'Création de jardins',
     description: 'Conception et aménagement d\'espaces verts sur mesure, massifs paysagers et remise en état.',
     href: '/services#creation-jardins',
-    image: '/webp/structures-exterieures-5.webp',
     tag: 'Paysagisme',
   },
   {
@@ -22,7 +21,6 @@ const services = [
     title: 'Terrasses & Patios',
     description: 'Terrasses bois, composite, carrelage, pierre bleue, pavé. Pergolas et structures extérieures.',
     href: '/services#terrasses',
-    image: '/webp/pergola.webp',
     tag: 'Structures',
   },
   {
@@ -30,7 +28,6 @@ const services = [
     title: 'Maçonnerie paysagère',
     description: 'Allées, accès véhicules, murs de soutènement, dalles béton et pavés sur mesure.',
     href: '/services#maconnerie',
-    image: '/webp/maconnerie-paysagere.webp',
     tag: 'Maçonnerie',
   },
   {
@@ -38,7 +35,6 @@ const services = [
     title: 'Clôtures & Délimitations',
     description: 'Pose de clôtures rigides, bois ou composite, portillons et brise-vues.',
     href: '/services#clotures',
-    image: '/webp/cloture-rigide.webp',
     tag: 'Clôtures',
   },
   {
@@ -46,7 +42,6 @@ const services = [
     title: 'Plantation & Végétalisation',
     description: 'Arbres, arbustes, haies, massifs fleuris et plantes vivaces pour habiller vos espaces.',
     href: '/services#plantation',
-    image: '/webp/plantation.webp',
     tag: 'Plantation',
   },
   {
@@ -54,7 +49,6 @@ const services = [
     title: 'Gazon',
     description: 'Semis, gazon en rouleau ou réfection de pelouse — nous créons le tapis vert dont vous rêvez.',
     href: '/services#gazon',
-    image: '/webp/gazon.webp',
     tag: 'Gazon',
   },
   {
@@ -62,7 +56,6 @@ const services = [
     title: 'Entretien de jardins',
     description: 'Taille de haies, tonte, désherbage, entretien régulier. Crédit d\'impôt 50% pour particuliers.',
     href: '/services#entretien',
-    image: '/webp/gazon-2.webp',
     tag: 'Entretien',
   },
   {
@@ -70,7 +63,6 @@ const services = [
     title: 'Espace bien-être',
     description: 'Installation de jacuzzi extérieur ou bain nordique pour des moments de détente uniques.',
     href: '/services#bien-etre',
-    image: '/webp/bien-etre.webp',
     tag: 'Bien-être',
   },
 ];
@@ -267,36 +259,25 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.07, duration: 0.6 }}
-                className="snap-start flex-shrink-0 w-[82vw] sm:w-[300px] lg:w-[320px] bg-white rounded-3xl overflow-hidden shadow-2xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+                whileHover={{ y: -6 }}
+                className="group snap-start flex-shrink-0 w-[78vw] sm:w-[260px] lg:w-[280px] min-h-[520px] flex flex-col py-2"
               >
-                {/* Photo */}
-                <div className="relative h-52 overflow-hidden flex-shrink-0">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-                  <span className="absolute top-4 left-4 bg-coral text-white text-xs font-body font-semibold px-3 py-1.5 rounded-full tracking-wide">
-                    {service.tag}
-                  </span>
-                </div>
-
-                {/* Contenu */}
-                <div className="p-7 flex flex-col flex-1">
-                  <div className="bg-warm-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4 flex-shrink-0 group-hover:bg-coral group-hover:scale-110 transition-all duration-300">
-                    <service.icon size={22} className="text-primary group-hover:text-white transition-colors" />
+                <div className="p-6 flex flex-col flex-1 min-h-[520px] items-center text-center border border-warm-200 rounded-2xl hover:border-coral/50 hover:shadow-lg transition-all duration-300">
+                  <div className="bg-warm-200/40 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0 group-hover:bg-coral transition-all duration-300">
+                    <service.icon size={36} className="text-primary group-hover:text-white transition-colors" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg font-display font-bold text-primary mb-3 leading-snug">{service.title}</h3>
-                  <p className="text-sm text-khaki font-body leading-relaxed flex-1 mb-6">{service.description}</p>
+                  <h3 className="text-2xl font-display font-bold text-primary mb-5 leading-tight uppercase tracking-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-lg text-khaki font-body leading-relaxed flex-1 mb-8">
+                    {service.description}
+                  </p>
                   <Link href={service.href}>
                     <a
                       href={service.href}
-                      className="inline-flex items-center justify-center gap-2 w-full bg-primary text-cream px-6 py-3.5 rounded-2xl hover:bg-coral transition-colors duration-300 font-body font-medium text-sm"
+                      className="inline-flex items-center justify-center gap-2 w-full bg-primary text-cream px-6 py-4 rounded-2xl hover:bg-coral transition-colors duration-300 font-body font-semibold text-base"
                     >
-                      À découvrir <ArrowRight size={16} />
+                      À découvrir !
                     </a>
                   </Link>
                 </div>
