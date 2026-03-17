@@ -1,9 +1,11 @@
+import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, CheckCircle2, Sprout, Hammer, TreePine,
-  Fence, Star, Phone,
+  Fence, Star, Phone, ChevronLeft, ChevronRight,
+  Flower2, Layers, Home as HomeIcon,
 } from 'lucide-react';
 
 const services = [
@@ -12,24 +14,64 @@ const services = [
     title: 'Création de jardins',
     description: 'Conception et aménagement d\'espaces verts sur mesure, massifs paysagers et remise en état.',
     href: '/services#creation-jardins',
+    image: '/webp/structures-exterieures-5.webp',
+    tag: 'Paysagisme',
   },
   {
     icon: Hammer,
     title: 'Terrasses & Patios',
     description: 'Terrasses bois, composite, carrelage, pierre bleue, pavé. Pergolas et structures extérieures.',
     href: '/services#terrasses',
+    image: '/webp/pergola.webp',
+    tag: 'Structures',
   },
   {
-    icon: TreePine,
-    title: 'Entretien paysager',
-    description: 'Taille de haies, tonte, désherbage, entretien régulier. Crédit d\'impôt 50% pour particuliers.',
-    href: '/services#entretien',
+    icon: Layers,
+    title: 'Maçonnerie paysagère',
+    description: 'Allées, accès véhicules, murs de soutènement, dalles béton et pavés sur mesure.',
+    href: '/services#maconnerie',
+    image: '/webp/maconnerie-paysagere.webp',
+    tag: 'Maçonnerie',
   },
   {
     icon: Fence,
-    title: 'Clôtures & Maçonnerie',
-    description: 'Pose de clôtures, portillons, allées, murs de soutènement et accès véhicules.',
+    title: 'Clôtures & Délimitations',
+    description: 'Pose de clôtures rigides, bois ou composite, portillons et brise-vues.',
     href: '/services#clotures',
+    image: '/webp/cloture-rigide.webp',
+    tag: 'Clôtures',
+  },
+  {
+    icon: Flower2,
+    title: 'Plantation & Végétalisation',
+    description: 'Arbres, arbustes, haies, massifs fleuris et plantes vivaces pour habiller vos espaces.',
+    href: '/services#plantation',
+    image: '/webp/plantation.webp',
+    tag: 'Plantation',
+  },
+  {
+    icon: Sprout,
+    title: 'Gazon',
+    description: 'Semis, gazon en rouleau ou réfection de pelouse — nous créons le tapis vert dont vous rêvez.',
+    href: '/services#gazon',
+    image: '/webp/gazon.webp',
+    tag: 'Gazon',
+  },
+  {
+    icon: TreePine,
+    title: 'Entretien de jardins',
+    description: 'Taille de haies, tonte, désherbage, entretien régulier. Crédit d\'impôt 50% pour particuliers.',
+    href: '/services#entretien',
+    image: '/webp/gazon-2.webp',
+    tag: 'Entretien',
+  },
+  {
+    icon: HomeIcon,
+    title: 'Espace bien-être',
+    description: 'Installation de jacuzzi extérieur ou bain nordique pour des moments de détente uniques.',
+    href: '/services#bien-etre',
+    image: '/webp/bien-etre.webp',
+    tag: 'Bien-être',
   },
 ];
 
@@ -60,6 +102,16 @@ const fadeUp = {
 };
 
 export default function Home() {
+  const scrollRef = useRef(null);
+
+  const scroll = (dir) => {
+    if (scrollRef.current) {
+      const card = scrollRef.current.querySelector('[data-card]');
+      const cardWidth = card ? card.offsetWidth + 24 : 360;
+      scrollRef.current.scrollBy({ left: dir === 'next' ? cardWidth : -cardWidth, behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
       {/* Hero */}
@@ -151,18 +203,20 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <p className="text-xs text-cream/50 font-body text-center mt-4">
-            * Crédit d&apos;impôt sur les travaux d&apos;entretien pour particuliers dans le cadre des services à la personne
+          <p className="text-xs text-cream/50 font-body text-center mt-4 max-w-2xl mx-auto">
+            * Crédit d&apos;impôt 50 % (services à la personne). Possibilité de déduction directe sur la facture.
           </p>
         </div>
       </section>
 
       {/* Services */}
       <section className="py-24 bg-cream relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-warm-200/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-warm-200/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
+
+          {/* Header + flèches */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -170,45 +224,92 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <p className="font-script text-coral text-2xl mb-2">Ce que nous faisons</p>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
                 Nos services
               </h2>
-              <p className="text-lg text-khaki font-body max-w-2xl mx-auto">
-                Des solutions complètes pour tous vos projets d&apos;aménagement extérieur
-              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="flex items-center gap-3"
+            >
+              <button
+                onClick={() => scroll('prev')}
+                aria-label="Service précédent"
+                className="w-12 h-12 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center hover:bg-coral hover:border-coral hover:text-white transition-all duration-300"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={() => scroll('next')}
+                aria-label="Service suivant"
+                className="w-12 h-12 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center hover:bg-coral hover:border-coral hover:text-white transition-all duration-300"
+              >
+                <ChevronRight size={20} />
+              </button>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Carousel */}
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {services.map((service, index) => (
               <motion.div
                 key={service.href}
+                data-card
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ y: -6 }}
-                className="group bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                transition={{ delay: index * 0.07, duration: 0.6 }}
+                className="snap-start flex-shrink-0 w-[82vw] sm:w-[300px] lg:w-[320px] bg-white rounded-3xl overflow-hidden shadow-2xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-warm-200/30 rounded-full blur-xl translate-x-1/2 -translate-y-1/2" />
-                <div className="bg-warm-100 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 shadow-sm group-hover:bg-coral group-hover:scale-110 transition-all duration-300">
-                  <service.icon size={26} className="text-primary group-hover:text-white transition-colors" />
+                {/* Photo */}
+                <div className="relative h-52 overflow-hidden flex-shrink-0">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                  <span className="absolute top-4 left-4 bg-coral text-white text-xs font-body font-semibold px-3 py-1.5 rounded-full tracking-wide">
+                    {service.tag}
+                  </span>
                 </div>
-                <h3 className="text-lg font-display font-semibold text-primary mb-3">{service.title}</h3>
-                <p className="text-sm text-khaki font-body leading-relaxed mb-4">{service.description}</p>
-                <Link href={service.href}>
-                  <a href={service.href} className="inline-flex items-center text-sm text-coral font-body font-medium hover:gap-2 transition-all">
-                    En savoir plus <ArrowRight size={15} className="ml-1" />
-                  </a>
-                </Link>
+
+                {/* Contenu */}
+                <div className="p-7 flex flex-col flex-1">
+                  <div className="bg-warm-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4 flex-shrink-0 group-hover:bg-coral group-hover:scale-110 transition-all duration-300">
+                    <service.icon size={22} className="text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-primary mb-3 leading-snug">{service.title}</h3>
+                  <p className="text-sm text-khaki font-body leading-relaxed flex-1 mb-6">{service.description}</p>
+                  <Link href={service.href}>
+                    <a
+                      href={service.href}
+                      className="inline-flex items-center justify-center gap-2 w-full bg-primary text-cream px-6 py-3.5 rounded-2xl hover:bg-coral transition-colors duration-300 font-body font-medium text-sm"
+                    >
+                      À découvrir <ArrowRight size={16} />
+                    </a>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
 
+          {/* CTA bas */}
           <div className="text-center mt-12">
             <Link href="/services">
-              <a href="/services" className="inline-flex items-center justify-center bg-primary text-cream px-10 py-4 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-body font-medium">
-                Découvrir tous nos services
+              <a href="/services" className="inline-flex items-center justify-center bg-primary text-cream px-10 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-body font-medium">
+                Voir tous nos services
+                <ArrowRight size={18} className="ml-2" />
               </a>
             </Link>
           </div>

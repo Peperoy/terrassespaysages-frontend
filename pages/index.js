@@ -32,12 +32,6 @@ const localBusinessSchema = {
       opens: '08:00',
       closes: '18:00',
     },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '09:00',
-      closes: '17:00',
-    },
   ],
   areaServed: {
     '@type': 'GeoCircle',

@@ -26,7 +26,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Horaires',
-    lines: ['Lundi — Vendredi : 8h — 18h', 'Samedi : 9h — 17h', 'Dimanche : Fermé'],
+    lines: ['Lundi — Vendredi : 8h — 18h', 'Samedi : Fermé', 'Dimanche : Fermé'],
   },
 ];
 

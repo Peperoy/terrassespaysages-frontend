@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://terrasses-paysages.com
+
+# Sitemaps
+Sitemap: https://terrasses-paysages.com/sitemap.xml
