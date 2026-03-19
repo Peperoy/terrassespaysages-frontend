@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Router from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
 import { CONSENT_KEY } from '../lib/cookieConsent';
 
@@ -39,6 +40,19 @@ export default function AnalyticsLoader() {
       gtag('config', '${GA_ID}');
     `;
     document.head.appendChild(inline);
+  }, [audienceAllowed]);
+
+  // Pages vues sur navigation client (Next.js), après chargement initial gtag
+  useEffect(() => {
+    if (!audienceAllowed || !GA_ID) return;
+
+    const onRoute = (url) => {
+      if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+      window.gtag('config', GA_ID, { page_path: url });
+    };
+
+    Router.events.on('routeChangeComplete', onRoute);
+    return () => Router.events.off('routeChangeComplete', onRoute);
   }, [audienceAllowed]);
 
   if (!audienceAllowed) return null;
