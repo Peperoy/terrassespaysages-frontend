@@ -31,11 +31,12 @@ export default function AnalyticsLoader() {
 
     const inline = document.createElement('script');
     inline.id = 'ga4-config';
+    // Équivalent à la balise officielle gtag.js (chargée ici seulement après consentement cookies — EEE / CNIL).
     inline.innerHTML = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${GA_ID}', { anonymize_ip: true });
+      gtag('config', '${GA_ID}');
     `;
     document.head.appendChild(inline);
   }, [audienceAllowed]);
