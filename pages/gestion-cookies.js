@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Cookie } from 'lucide-react';
 import LegalSection from '../components/LegalSection';
 import { CONSENT_KEY, notifyCookieConsentChanged } from '../lib/cookieConsent';
+import { SITE_HOST } from '../lib/siteConfig';
 
 const Section = LegalSection;
 
@@ -97,7 +98,7 @@ export default function GestionCookies() {
 
           <Section title="2. Cookies utilisés sur ce site">
             <p>
-              Le site <strong className="text-primary">terrasses-paysages.com</strong> utilise des cookies{' '}
+              Le site <strong className="text-primary">{SITE_HOST}</strong> utilise des cookies{' '}
               <strong className="text-primary">strictement nécessaires</strong> (mémorisation de votre choix de cookies)
               sans consentement préalable, conformément à l&apos;article 82 de la loi Informatique et Libertés.
             </p>

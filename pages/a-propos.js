@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { SITE_URL } from '../lib/siteConfig';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -47,12 +48,12 @@ export default function AProposPage() {
         <title>À propos — Terrasses & Paysages Valenciennes</title>
         <meta name="description" content="Découvrez Terrasses & Paysages, entreprise spécialisée dans l'aménagement extérieur à Valenciennes. Expertise, valeurs et zone d'intervention." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://terrasses-paysages.com/a-propos" />
+        <link rel="canonical" href={`${SITE_URL}/a-propos`} />
 
         <meta property="og:title" content="À propos — Terrasses & Paysages Valenciennes" />
         <meta property="og:description" content="Entreprise spécialisée dans l'aménagement extérieur à Valenciennes : création de jardins, terrasses, clôtures et entretien paysager." />
-        <meta property="og:url" content="https://terrasses-paysages.com/a-propos" />
-        <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta property="og:url" content={`${SITE_URL}/a-propos`} />
+        <meta property="og:image" content={`${SITE_URL}/og/home.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
@@ -62,7 +63,7 @@ export default function AProposPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="À propos — Terrasses & Paysages Valenciennes" />
         <meta name="twitter:description" content="Entreprise d'aménagement extérieur à Valenciennes. Expertise, valeurs et zone d'intervention." />
-        <meta name="twitter:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og/home.jpg`} />
       </Head>
 
       {/* Hero */}

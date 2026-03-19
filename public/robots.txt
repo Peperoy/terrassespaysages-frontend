@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://terrasses-paysages.com
+Host: https://www.terrasses-paysages.com
 
 # Sitemaps
-Sitemap: https://terrasses-paysages.com/sitemap.xml
+Sitemap: https://www.terrasses-paysages.com/sitemap.xml

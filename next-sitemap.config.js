@@ -1,6 +1,10 @@
 /** @type {import('next-sitemap').IConfig} */
+const siteUrl =
+  (process.env.NEXT_PUBLIC_SITE_URL && String(process.env.NEXT_PUBLIC_SITE_URL).replace(/\/$/, '')) ||
+  'https://www.terrasses-paysages.com';
+
 module.exports = {
-  siteUrl: 'https://terrasses-paysages.com',
+  siteUrl,
   /** Un seul fichier sitemap.xml (pas d'index + sitemap-0.xml) — suffisant tant que < 50 000 URLs. */
   generateIndexSitemap: false,
   generateRobotsTxt: true,

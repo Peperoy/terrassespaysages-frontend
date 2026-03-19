@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { SITE_URL } from '../lib/siteConfig';
 import { motion } from 'framer-motion';
 import {
   MapPin, Phone, Mail, Clock, Send, CheckCircle,
@@ -105,12 +106,12 @@ export default function ContactPage() {
         <title>Contact — Terrasses & Paysages Valenciennes</title>
         <meta name="description" content="Contactez Terrasses & Paysages à Valenciennes. Devis gratuit pour aménagement extérieur, terrasse, jardin, clôture. Tél : 07 83 27 69 67" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://terrasses-paysages.com/contact" />
+        <link rel="canonical" href={`${SITE_URL}/contact`} />
 
         <meta property="og:title" content="Contact — Terrasses & Paysages Valenciennes" />
         <meta property="og:description" content="Contactez-nous pour un devis gratuit. Aménagement extérieur, terrasse, jardin, clôture à Valenciennes. Tél : 07 83 27 69 67" />
-        <meta property="og:url" content="https://terrasses-paysages.com/contact" />
-        <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta property="og:url" content={`${SITE_URL}/contact`} />
+        <meta property="og:image" content={`${SITE_URL}/og/home.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
@@ -120,7 +121,7 @@ export default function ContactPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact — Terrasses & Paysages Valenciennes" />
         <meta name="twitter:description" content="Contactez-nous pour un devis gratuit. Tél : 07 83 27 69 67" />
-        <meta name="twitter:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og/home.jpg`} />
 
         <script
           type="application/ld+json"

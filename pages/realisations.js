@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import Head from 'next/head';
+import { SITE_URL } from '../lib/siteConfig';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -244,12 +245,12 @@ export default function RealisationsPage() {
         <title>Réalisations — Paysagiste à Valenciennes | Terrasses & Paysages</title>
         <meta name="description" content="Galerie de réalisations de votre paysagiste à Valenciennes : jardins aménagés, terrasses bois & carrelage, clôtures, pergolas et maçonnerie paysagère." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://terrasses-paysages.com/realisations" />
+        <link rel="canonical" href={`${SITE_URL}/realisations`} />
 
         <meta property="og:title" content="Réalisations — Paysagiste à Valenciennes | Terrasses & Paysages" />
         <meta property="og:description" content="Galerie de réalisations : jardins, terrasses, clôtures et aménagements extérieurs à Valenciennes." />
-        <meta property="og:url" content="https://terrasses-paysages.com/realisations" />
-        <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta property="og:url" content={`${SITE_URL}/realisations`} />
+        <meta property="og:image" content={`${SITE_URL}/og/home.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
@@ -259,7 +260,7 @@ export default function RealisationsPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Réalisations — Terrasses & Paysages Valenciennes" />
         <meta name="twitter:description" content="Galerie de réalisations : terrasses, jardins, clôtures et aménagements extérieurs à Valenciennes." />
-        <meta name="twitter:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og/home.jpg`} />
       </Head>
 
       {/* Hero */}

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { SITE_URL } from '../lib/siteConfig';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -132,12 +133,12 @@ export default function ServicesPage() {
         <title>Services — Terrasses & Paysages Valenciennes</title>
         <meta name="description" content="Création de jardins, terrasses, clôtures, maçonnerie paysagère, plantation et entretien à Valenciennes. Devis gratuit." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://terrasses-paysages.com/services" />
+        <link rel="canonical" href={`${SITE_URL}/services`} />
 
         <meta property="og:title" content="Services — Terrasses & Paysages Valenciennes" />
         <meta property="og:description" content="Création de jardins, terrasses, clôtures, maçonnerie paysagère, plantation et entretien à Valenciennes. Devis gratuit." />
-        <meta property="og:url" content="https://terrasses-paysages.com/services" />
-        <meta property="og:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta property="og:url" content={`${SITE_URL}/services`} />
+        <meta property="og:image" content={`${SITE_URL}/og/home.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
@@ -147,7 +148,7 @@ export default function ServicesPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Services — Terrasses & Paysages Valenciennes" />
         <meta name="twitter:description" content="Création de jardins, terrasses, clôtures et entretien paysager à Valenciennes. Devis gratuit." />
-        <meta name="twitter:image" content="https://terrasses-paysages.com/og/home.jpg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og/home.jpg`} />
       </Head>
 
       {/* Hero */}

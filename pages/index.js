@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Home from '../components/Home';
-
-const SITE_URL = 'https://terrasses-paysages.com';
+import { SITE_URL } from '../lib/siteConfig';
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
