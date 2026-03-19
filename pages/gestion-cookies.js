@@ -51,13 +51,13 @@ export default function GestionCookies() {
   const allowAnalytics = () => {
     localStorage.setItem(CONSENT_KEY, 'accepted');
     notifyCookieConsentChanged();
-    window.location.reload();
+    globalThis.location.reload();
   };
 
   const denyAnalytics = () => {
     localStorage.setItem(CONSENT_KEY, 'refused');
     notifyCookieConsentChanged();
-    window.location.reload();
+    globalThis.location.reload();
   };
 
   return (

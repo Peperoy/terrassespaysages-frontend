@@ -16,8 +16,8 @@ export default function AnalyticsLoader() {
       setAudienceAllowed(localStorage.getItem(CONSENT_KEY) === 'accepted');
     };
     sync();
-    window.addEventListener('cookie-consent-changed', sync);
-    return () => window.removeEventListener('cookie-consent-changed', sync);
+    globalThis.addEventListener('cookie-consent-changed', sync);
+    return () => globalThis.removeEventListener('cookie-consent-changed', sync);
   }, []);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function AnalyticsLoader() {
     inline.id = 'ga4-config';
     // Équivalent à la balise officielle gtag.js (chargée ici seulement après consentement cookies — EEE / CNIL).
     inline.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
+      globalThis.dataLayer = globalThis.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', '${GA_ID}');
@@ -47,8 +47,8 @@ export default function AnalyticsLoader() {
     if (!audienceAllowed || !GA_ID) return;
 
     const onRoute = (url) => {
-      if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
-      window.gtag('config', GA_ID, { page_path: url });
+      if (typeof globalThis === 'undefined' || typeof globalThis.gtag !== 'function') return;
+      globalThis.gtag('config', GA_ID, { page_path: url });
     };
 
     Router.events.on('routeChangeComplete', onRoute);

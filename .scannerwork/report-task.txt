@@ -1,6 +1,6 @@
 projectKey=terrassespaysages
 serverUrl=http://localhost:9000
-serverVersion=26.1.0.118079
+serverVersion=26.3.0.120487
 dashboardUrl=http://localhost:9000/dashboard?id=terrassespaysages
-ceTaskId=88c196c2-3cbc-4af7-8fcb-b45f9702200d
-ceTaskUrl=http://localhost:9000/api/ce/task?id=88c196c2-3cbc-4af7-8fcb-b45f9702200d
+ceTaskId=8c61f934-af4a-4911-a201-51200495f3ad
+ceTaskUrl=http://localhost:9000/api/ce/task?id=8c61f934-af4a-4911-a201-51200495f3ad
