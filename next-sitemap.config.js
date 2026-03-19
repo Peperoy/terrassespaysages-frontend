@@ -1,6 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: 'https://terrasses-paysages.com',
+  /** Un seul fichier sitemap.xml (pas d'index + sitemap-0.xml) — suffisant tant que < 50 000 URLs. */
+  generateIndexSitemap: false,
   generateRobotsTxt: true,
   robotsTxtOptions: {
     rules: [
