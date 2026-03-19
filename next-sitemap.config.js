@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 const siteUrl =
   (process.env.NEXT_PUBLIC_SITE_URL && String(process.env.NEXT_PUBLIC_SITE_URL).replace(/\/$/, '')) ||
-  'https://www.terrasses-paysages.com';
+  'https://www.terrassespaysages.com';
 
 module.exports = {
   siteUrl,
