@@ -190,8 +190,10 @@ export default function PolitiqueConfidentialite() {
 
           <Section title="11. Cookies">
             <p>
-              Ce site utilise des cookies techniques strictement nécessaires à son fonctionnement.
-              Pour plus d&apos;informations, consultez notre{' '}
+              Ce site utilise des cookies strictement nécessaires (par exemple pour mémoriser votre choix concernant les cookies).
+              Sous réserve de votre consentement, des outils de <strong className="text-primary">mesure d&apos;audience</strong>{' '}
+              (Google Analytics 4, Vercel Web Analytics) peuvent être chargés ; ils ne le sont qu&apos;après acceptation via la bannière
+              ou la page dédiée. Pour le détail des finalités et la gestion de vos préférences, consultez notre{' '}
               <Link href="/gestion-cookies">
                 <a href="/gestion-cookies" className="text-coral hover:underline">politique de gestion des cookies</a>
               </Link>.

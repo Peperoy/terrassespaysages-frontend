@@ -1,0 +1,46 @@
+import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { CONSENT_KEY } from '../lib/cookieConsent';
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+/**
+ * Charge Google Analytics 4 et Vercel Analytics uniquement si l'utilisateur a accepté les cookies (mesure d'audience).
+ */
+export default function AnalyticsLoader() {
+  const [audienceAllowed, setAudienceAllowed] = useState(false);
+
+  useEffect(() => {
+    const sync = () => {
+      setAudienceAllowed(localStorage.getItem(CONSENT_KEY) === 'accepted');
+    };
+    sync();
+    window.addEventListener('cookie-consent-changed', sync);
+    return () => window.removeEventListener('cookie-consent-changed', sync);
+  }, []);
+
+  useEffect(() => {
+    if (!audienceAllowed || !GA_ID) return;
+    if (document.getElementById('ga4-gtag-js')) return;
+
+    const gtagScript = document.createElement('script');
+    gtagScript.id = 'ga4-gtag-js';
+    gtagScript.async = true;
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(gtagScript);
+
+    const inline = document.createElement('script');
+    inline.id = 'ga4-config';
+    inline.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_ID}', { anonymize_ip: true });
+    `;
+    document.head.appendChild(inline);
+  }, [audienceAllowed]);
+
+  if (!audienceAllowed) return null;
+
+  return <Analytics />;
+}

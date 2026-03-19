@@ -54,6 +54,12 @@ export default function Index() {
         <title>Terrasses & Paysages — Aménagement extérieur à Valenciennes</title>
         <meta name="description" content="Terrasses & Paysages : création de jardins, terrasses, clôtures, maçonnerie paysagère et entretien à Valenciennes et alentours. Devis gratuit — 07 83 27 69 67" />
         <meta name="robots" content="index, follow" />
+        {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? (
+          <meta
+            name="google-site-verification"
+            content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+          />
+        ) : null}
         <link rel="canonical" href={SITE_URL} />
 
         <meta property="og:title" content="Terrasses & Paysages — Aménagement extérieur à Valenciennes" />

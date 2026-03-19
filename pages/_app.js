@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import SplashScreen from '../components/SplashScreen';
 import CookieBanner from '../components/CookieBanner';
+import AnalyticsLoader from '../components/AnalyticsLoader';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }) {
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
         </Layout>
       </div>
       <CookieBanner />
+      <AnalyticsLoader />
     </>
   );
 }

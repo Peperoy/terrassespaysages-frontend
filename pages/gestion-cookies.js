@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { XCircle, Cookie } from 'lucide-react';
+import { CheckCircle2, Cookie } from 'lucide-react';
 import LegalSection from '../components/LegalSection';
+import { CONSENT_KEY, notifyCookieConsentChanged } from '../lib/cookieConsent';
 
 const Section = LegalSection;
 
@@ -10,25 +12,51 @@ const cookiesList = [
   {
     name: 'cookie_consent',
     type: 'Nécessaire',
-    purpose: 'Mémoriser votre choix concernant l\'acceptation ou le refus des cookies',
+    purpose: 'Mémoriser votre choix concernant l\'acceptation ou le refus des cookies (y compris mesure d\'audience)',
     duration: '6 mois',
     obligatoire: true,
   },
   {
-    name: 'Session (next-auth, _session)',
-    type: 'Nécessaire',
-    purpose: 'Assurer le bon fonctionnement technique du site (navigation, sécurité)',
-    duration: 'Session (supprimé à la fermeture du navigateur)',
-    obligatoire: true,
+    name: '_ga, _ga_*, _gid',
+    type: 'Audience (consentement)',
+    purpose: 'Google Analytics 4 : statistiques de fréquentation (pages vues, origine du trafic). Chargé uniquement si vous acceptez.',
+    duration: 'Jusqu\'à 13 mois (selon paramètres GA)',
+    obligatoire: false,
+  },
+  {
+    name: 'Vercel Web Analytics',
+    type: 'Audience (consentement)',
+    purpose: 'Mesure d\'audience et performances du site via Vercel. Service orienté confidentialité ; chargé uniquement si vous acceptez.',
+    duration: 'Selon la politique Vercel',
+    obligatoire: false,
   },
 ];
 
 export default function GestionCookies() {
+  const [consent, setConsent] = useState(null);
+
+  useEffect(() => {
+    setConsent(localStorage.getItem(CONSENT_KEY));
+  }, []);
+
   const handleReset = () => {
     if (globalThis.window !== undefined) {
-      localStorage.removeItem('cookie_consent');
+      localStorage.removeItem(CONSENT_KEY);
+      notifyCookieConsentChanged();
       globalThis.window.location.reload();
     }
+  };
+
+  const allowAnalytics = () => {
+    localStorage.setItem(CONSENT_KEY, 'accepted');
+    notifyCookieConsentChanged();
+    window.location.reload();
+  };
+
+  const denyAnalytics = () => {
+    localStorage.setItem(CONSENT_KEY, 'refused');
+    notifyCookieConsentChanged();
+    window.location.reload();
   };
 
   return (
@@ -69,10 +97,15 @@ export default function GestionCookies() {
 
           <Section title="2. Cookies utilisés sur ce site">
             <p>
-              Le site <strong className="text-primary">terrasses-paysages.com</strong> n&apos;utilise
-              {' '}<strong className="text-primary">aucun cookie publicitaire ou de traçage</strong>.
-              Seuls des cookies <strong className="text-primary">strictement nécessaires</strong> au fonctionnement
-              du site sont déposés, sans nécessiter votre consentement préalable (article 82 de la loi Informatique et Libertés).
+              Le site <strong className="text-primary">terrasses-paysages.com</strong> utilise des cookies{' '}
+              <strong className="text-primary">strictement nécessaires</strong> (mémorisation de votre choix de cookies)
+              sans consentement préalable, conformément à l&apos;article 82 de la loi Informatique et Libertés.
+            </p>
+            <p className="mt-3">
+              Sous réserve de votre <strong className="text-primary">consentement</strong> via la bannière ou les boutons
+              ci-dessous, nous chargeons également <strong className="text-primary">Google Analytics 4</strong> et{' '}
+              <strong className="text-primary">Vercel Web Analytics</strong> pour la mesure d&apos;audience et l&apos;amélioration
+              du site. Nous n&apos;utilisons pas de cookies publicitaires ni de pixel de reciblage.
             </p>
 
             <div className="overflow-x-auto mt-4">
@@ -103,25 +136,29 @@ export default function GestionCookies() {
             </div>
           </Section>
 
-          <Section title="3. Absence de cookies tiers">
-            <p>Ce site ne fait appel à aucun service tiers susceptible de déposer des cookies, notamment :</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
-              {[
-                'Google Analytics / Google Tag Manager',
-                'Meta Pixel (Facebook)',
-                'Publicités Google Ads',
-                'Réseaux sociaux (boutons de partage)',
-                'Outils de chat en direct',
-                'Services de cartographie embarquée',
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-xs">
-                  <XCircle size={15} className="text-red-400 flex-shrink-0" />
-                  <span className="text-primary/60">{item}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-3 text-xs text-khaki italic">
-              Si des services tiers venaient à être intégrés (ex : statistiques, carte), cette politique sera mise à jour.
+          <Section title="3. Services tiers et mesure d'audience">
+            <p>
+              Avec votre accord, les services suivants peuvent être activés (voir tableau section 2) :
+            </p>
+            <ul className="list-disc list-inside space-y-1 pl-2 mt-2">
+              <li>
+                <strong className="text-primary">Google Analytics 4</strong> (Google Ireland Limited) — statistiques agrégées
+                de fréquentation. Vous pouvez en savoir plus sur{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-coral hover:underline">
+                  la politique de confidentialité de Google
+                </a>.
+              </li>
+              <li>
+                <strong className="text-primary">Vercel Web Analytics</strong> (Vercel Inc.) — mesure d&apos;audience hébergée
+                sur l&apos;infrastructure du site.{' '}
+                <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-coral hover:underline">
+                  Politique associée (Vercel)
+                </a>.
+              </li>
+            </ul>
+            <p className="mt-3 text-sm text-primary/70">
+              Nous n&apos;utilisons pas : publicité programmatique, Meta Pixel, chat tiers embarqué sur toutes les pages,
+              ni cartes interactives avec traçage par défaut.
             </p>
           </Section>
 
@@ -140,20 +177,53 @@ export default function GestionCookies() {
               </li>
             </ul>
 
-            <div className="mt-4 bg-white border-2 border-warm-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Cookie size={32} className="text-coral flex-shrink-0" />
-              <div className="flex-1">
-                <p className="font-semibold text-primary text-sm mb-1">Réinitialiser mes préférences de cookies</p>
-                <p className="text-xs text-primary/60">
-                  Cliquez sur ce bouton pour effacer votre choix enregistré et afficher à nouveau la bannière de consentement.
-                </p>
+            <div className="mt-4 space-y-4">
+              <div className="bg-white border-2 border-warm-200 rounded-2xl p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <CheckCircle2 size={24} className="text-coral flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-primary text-sm mb-1">État actuel (mesure d&apos;audience)</p>
+                    <p className="text-xs text-primary/60">
+                      {consent === 'accepted' && 'Vous avez accepté Google Analytics et Vercel Analytics.'}
+                      {consent === 'refused' && 'Vous avez refusé la mesure d’audience ; seuls les cookies nécessaires sont utilisés.'}
+                      {consent !== 'accepted' && consent !== 'refused' && 'Aucun choix enregistré — la bannière s’affichera sur votre prochaine visite si nécessaire.'}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                  <button
+                    type="button"
+                    onClick={allowAnalytics}
+                    className="bg-primary text-cream px-5 py-2.5 rounded-full text-sm font-body font-medium hover:bg-primary-dark transition-colors"
+                  >
+                    Autoriser la mesure d&apos;audience
+                  </button>
+                  <button
+                    type="button"
+                    onClick={denyAnalytics}
+                    className="bg-warm-200 text-primary px-5 py-2.5 rounded-full text-sm font-body font-medium hover:bg-warm-300 transition-colors"
+                  >
+                    Refuser la mesure d&apos;audience
+                  </button>
+                </div>
               </div>
-              <button
-                onClick={handleReset}
-                className="bg-coral text-white px-5 py-2.5 rounded-full text-sm font-body font-medium hover:bg-coral-dark transition-colors flex-shrink-0"
-              >
-                Réinitialiser
-              </button>
+
+              <div className="bg-white border-2 border-warm-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <Cookie size={32} className="text-coral flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="font-semibold text-primary text-sm mb-1">Réinitialiser mes préférences</p>
+                  <p className="text-xs text-primary/60">
+                    Efface votre choix enregistré et recharge la page : la bannière de cookies réapparaîtra.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="bg-coral text-white px-5 py-2.5 rounded-full text-sm font-body font-medium hover:bg-coral-dark transition-colors flex-shrink-0"
+                >
+                  Réinitialiser
+                </button>
+              </div>
             </div>
           </Section>
 

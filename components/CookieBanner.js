@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie, X } from 'lucide-react';
-
-const CONSENT_KEY = 'cookie_consent';
+import { CONSENT_KEY, notifyCookieConsentChanged } from '../lib/cookieConsent';
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -18,11 +17,13 @@ export default function CookieBanner() {
 
   const accept = () => {
     localStorage.setItem(CONSENT_KEY, 'accepted');
+    notifyCookieConsentChanged();
     setVisible(false);
   };
 
   const refuse = () => {
     localStorage.setItem(CONSENT_KEY, 'refused');
+    notifyCookieConsentChanged();
     setVisible(false);
   };
 
@@ -57,8 +58,9 @@ export default function CookieBanner() {
                   Ce site utilise des cookies
                 </h2>
                 <p className="text-xs text-primary/60 font-body leading-relaxed">
-                  Nous utilisons uniquement des cookies techniques nécessaires au bon fonctionnement du site.
-                  Aucun cookie publicitaire ou de traçage n&apos;est utilisé.
+                  Cookies nécessaires au fonctionnement du site. Si vous acceptez, nous utilisons également
+                  Google Analytics et Vercel Analytics pour mesurer l&apos;audience (pages vues, performances),
+                  sans publicité ciblée.
                 </p>
               </div>
             </div>
